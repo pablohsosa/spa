@@ -1,2 +1,12 @@
 <h1>Heroes</h1>
 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore optio fuga suscipit illo placeat modi, dicta enim veritatis nesciunt quae, voluptate molestiae repellendus repellat! Nesciunt, labore repellendus? Perferendis, itaque similique.</p>
+<div class="card-columns">
+    <div class="card" *ngFor="let heroe of heroes">
+        <img [src]="heroe.img" class="card-img-top" [alt]="heroe.nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{ heroe.nombre }}</h5>
+            <p class="card-text">{{heroe.bio}}</p>
+            <button class="btn btn-outline-primary btn-block">Ver más</button>
+        </div>
+    </div>
+</div>
