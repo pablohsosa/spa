@@ -1,1 +1,13 @@
-<p>heroe works!</p>
+<div>
+  <div class="container">
+    <div class="row" >
+      <div class="col-md-8">
+        <h1>{{ heroe.nombre }}</h1>
+        <img [src]="heroe.img" alt="">
+        <p>{{ heroe.bio }}</p>
+        <a  routerLink="/heroes" class="btn btn-outline-primary btn-block">Regresar</a>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+</div>

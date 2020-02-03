@@ -5,7 +5,7 @@ import { HeroeInterface} from '../interfaces/heroe';
   providedIn: 'root'
 })
 export class HeroesService {
-  
+
   private heroes: HeroeInterface [] = [
     {
       nombre: "Aquaman",
@@ -65,4 +65,9 @@ export class HeroesService {
   getHeroes() {
     return this.heroes;
   }
+
+  getHeroe(id: string){
+    return this.heroes[id];
+  }
+
 }
