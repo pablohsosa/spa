@@ -14,6 +14,7 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
 
 //servicios
 import { AuthService } from './servicios/auth.service';
+import { AuthGuard } from './guardias/auth.guard';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { AuthService } from './servicios/auth.service';
     AppRoutingModule
   ],
   providers: [ HeroesService,
-              AuthService
+              AuthService,
+              AuthGuard
   ],
   bootstrap: [AppComponent]
 })
