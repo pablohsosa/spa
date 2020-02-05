@@ -12,19 +12,19 @@ export class HeroeTarjetaComponent implements OnInit {
   @Input() heroe: HeroeInterface [] = [];
   @Input() indice: number;
 
-  @Output() heroeSeleccionado: EventEmitter<number>;
+  // @Output() heroeSeleccionado: EventEmitter<number>;
 
   constructor( private route: Router) {
-    this.heroeSeleccionado = new EventEmitter ();
+    // this.heroeSeleccionado = new EventEmitter ();
   }
 
   ngOnInit() {
   }
 
-  getHeroe(){
-    /* console.log(this.indice);
-    this.route.navigate(['/heroe',this.indice]); */
-    this.heroeSeleccionado.emit( this.indice );
+  verHeroe(){
+    console.log(this.indice);
+    this.route.navigate(['/heroe',this.indice]);
+    // this.heroeSeleccionado.emit( this.indice );
   }
 
 }

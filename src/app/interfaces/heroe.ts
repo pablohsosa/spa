@@ -4,4 +4,5 @@ export interface HeroeInterface {
     img: string;
     aparicion: string;
     casa: string;
+    idx?: number;
 }

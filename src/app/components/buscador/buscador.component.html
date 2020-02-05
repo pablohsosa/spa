@@ -1,7 +1,8 @@
 <h1>Buscador</h1>
+<h2 *ngIf="heroes.length > 0">Se encontraron {{ heroes.length }} coincidencias con el término de búsqueda "{{ termino }}"</h2>
 <div class="alert alert-primary" role="alert" *ngIf="heroes.length == 0">
   No existen resultados para la búsqueda por el término: " {{ termino }} "
 </div>
 <div class="card-columns">
-  <app-heroe-tarjeta [heroe]="heroe" [indice]="i" *ngFor="let heroe of heroes; let i = index" ></app-heroe-tarjeta>
+  <app-heroe-tarjeta [heroe]="heroe" [indice]="heroe.idx" *ngFor="let heroe of heroes" ></app-heroe-tarjeta>
 </div>
