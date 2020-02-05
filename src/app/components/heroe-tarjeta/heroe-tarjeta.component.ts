@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class HeroeTarjetaComponent implements OnInit {
 
-  @Input() heroe: HeroeInterface [] = [];
+  @Input() heroe: HeroeInterface = {nombre:'', bio:'', img:'', aparicion:'', casa:''};
+
   @Input() indice: number;
 
   // @Output() heroeSeleccionado: EventEmitter<number>;

@@ -11,7 +11,7 @@ import { HeroesService } from '../../servicios/heroes.service';
 })
 export class HeroeComponent implements OnInit {
 
-  heroe: HeroeInterface [] = [];
+  heroe: HeroeInterface = {nombre:'', bio:'', img:'', aparicion:'', casa:''};
 
   constructor( private rutactiva: ActivatedRoute, private heroesService: HeroesService) { }
 
