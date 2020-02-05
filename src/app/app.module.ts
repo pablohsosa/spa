@@ -12,6 +12,10 @@ import { HeroeComponent } from './components/heroe/heroe.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 
+//servicios
+import { AuthService } from './servicios/auth.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +31,9 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [ HeroesService ],
+  providers: [ HeroesService,
+              AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
