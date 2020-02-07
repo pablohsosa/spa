@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+
 import { HeroeInterface} from '../interfaces/heroe';
 
 @Injectable({
@@ -57,7 +61,7 @@ export class HeroesService {
       casa: "Marvel"
     }
   ];
-  constructor() {
+  constructor(private http: HttpClient) {
     console.log('Servicio listo para usarse');
   }
 
@@ -68,6 +72,19 @@ export class HeroesService {
 
   getHeroe(id: string){
     return this.heroes[id];
+  }
+
+  postHeroe(heroe: HeroeInterface){
+    let httpOptions = {
+      headers : new HttpHeaders({
+        'Content-Type' : 'application/json'
+      })
+    }
+    return this.http.post<HeroeInterface>(
+      'https://5d5ca8ac6cf1330014fea3aa.mockapi.io/usuarios',
+      heroe,
+      httpOptions
+    );
   }
 
   buscarHeroes( termino: string): HeroeInterface[]{
