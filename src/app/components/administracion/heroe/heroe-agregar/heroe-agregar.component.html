@@ -1,0 +1,5 @@
+<h1>Agregar heroe</h1>
+<form [formGroup]="form" novalidate (ngSubmit)="save($event)">
+
+  <button type="submit" [disabled]="form.invalid">Guardar</button>
+</form>

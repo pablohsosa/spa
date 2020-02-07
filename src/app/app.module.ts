@@ -13,13 +13,14 @@ import { AboutComponent } from './components/about/about.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { PerfilComponent } from './components/personas/perfil/perfil.component';
+import { AdministracionComponent } from './components/administracion/administracion.component';
+import { HeroeAgregarComponent } from './components/administracion/heroe/heroe-agregar/heroe-agregar.component';
 
 import { AuthService } from './servicios/auth.service';
 import { AuthGuard } from './guardias/auth.guard';
 import { HeroesService } from './servicios/heroes.service';
-import { PerfilComponent } from './components/personas/perfil/perfil.component';
-import { AdministracionComponent } from './components/administracion/administracion.component';
-import { HeroeAgregarComponent } from './administracion/heroe/heroe-agregar/heroe-agregar.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +35,6 @@ import { HeroeAgregarComponent } from './administracion/heroe/heroe-agregar/hero
     PerfilComponent,
     AdministracionComponent,
     HeroeAgregarComponent
-
   ],
   imports: [
     BrowserModule,
