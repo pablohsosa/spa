@@ -14,8 +14,6 @@ const rutas: Routes = [
   { path: 'heroes', component: HeroesComponent , canActivate: [AuthGuard] },
   { path: 'heroe/:id', component: HeroeComponent },
   { path: 'buscar/:termino', component: BuscadorComponent },
-  { path: 'perfil', component: PerfilComponent },
-
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
