@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { AuthService } from './servicios/auth.service';
 import { AuthGuard } from './guardias/auth.guard';
 import { HeroesService } from './servicios/heroes.service';
 import { PerfilComponent } from './components/personas/perfil/perfil.component';
+import { AdministracionComponent } from './components/administracion/administracion.component';
+import { RegistrarHeroeComponent } from './components/administracion/heroe/registrar-heroe/registrar-heroe.component';
 
 
 @NgModule({
@@ -27,11 +30,14 @@ import { PerfilComponent } from './components/personas/perfil/perfil.component';
     HeroeComponent,
     BuscadorComponent,
     HeroeTarjetaComponent,
-    PerfilComponent
+    PerfilComponent,
+    AdministracionComponent,
+    RegistrarHeroeComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [ HeroesService,
               AuthService,

@@ -1,8 +1,8 @@
 export interface HeroeInterface {
-    nombre: string;
-    bio: string;
-    img: string;
-    aparicion: string;
-    casa: string;
-    idx?: number;
+  idx?: number;
+  nombre: string;
+  bio: string;
+  img: string;
+  aparicion: string;
+  casa: string;
 }
