@@ -6,8 +6,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { AuthGuard } from '././guardias/auth.guard';
-
-
+import { PerfilComponent } from './components/personas/perfil/perfil.component';
 
 const rutas: Routes = [
   { path: 'home', component: HomeComponent},
@@ -15,6 +14,8 @@ const rutas: Routes = [
   { path: 'heroes', component: HeroesComponent , canActivate: [AuthGuard] },
   { path: 'heroe/:id', component: HeroeComponent },
   { path: 'buscar/:termino', component: BuscadorComponent },
+  { path: 'perfil', component: PerfilComponent },
+
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
