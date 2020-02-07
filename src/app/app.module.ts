@@ -14,6 +14,7 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
 import { AuthService } from './servicios/auth.service';
 import { AuthGuard } from './guardias/auth.guard';
 import { HeroesService } from './servicios/heroes.service';
+import { PerfilComponent } from './components/personas/perfil/perfil.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HeroesService } from './servicios/heroes.service';
     AboutComponent,
     HeroeComponent,
     BuscadorComponent,
-    HeroeTarjetaComponent
+    HeroeTarjetaComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,
