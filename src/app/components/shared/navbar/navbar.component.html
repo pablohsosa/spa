@@ -18,6 +18,9 @@
         <a class="nav-link" routerLink="/heroes" routerLinkActive="active">Heroes</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" routerLink="/admin" routerLinkActive="active" *ngIf="auth.loggedIn">Administración</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" routerLink="/perfil" routerLinkActive="active" *ngIf="auth.loggedIn">Perfil</a>
       </li>
     </ul>

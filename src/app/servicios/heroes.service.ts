@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 import { HeroeInterface} from '../interfaces/heroe';
 
@@ -61,10 +61,10 @@ export class HeroesService {
       casa: "Marvel"
     }
   ];
-  constructor(private http: HttpClient) {
+
+   constructor(private http: HttpClient) {
     console.log('Servicio listo para usarse');
   }
-
 
   getHeroes() {
     return this.heroes;
@@ -74,17 +74,21 @@ export class HeroesService {
     return this.heroes[id];
   }
 
-  postHeroe(heroe: HeroeInterface){
+  postHeroe(heroe: HeroeInterface): Observable<HeroeInterface> {
     let httpOptions = {
-      headers : new HttpHeaders({
-        'Content-Type' : 'application/json'
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
       })
     }
     return this.http.post<HeroeInterface>(
       'https://5d5ca8ac6cf1330014fea3aa.mockapi.io/usuarios',
       heroe,
       httpOptions
-    );
+    )
+      // Manejo de errores
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   buscarHeroes( termino: string): HeroeInterface[]{
@@ -108,5 +112,22 @@ export class HeroesService {
 
     return heroesArr;
   }
+
+
+
+  private handleError(error: HttpErrorResponse) {
+    if (error.error instanceof ErrorEvent) {
+      // Error en el lado del cliente
+      console.error('Ocurrió un error:', error.error.message);
+
+    } else {
+      // El backend devolvió un código de respuesta de error.
+      console.error(`El Backend retornó el código ${error.status},` +
+        `El cuerpo del mensaje del error es: ${error.message}`);
+
+    }
+    return throwError('El sitio no está funcionando correctamente, por favor intente más tarde.');
+  }
+
 
 }

@@ -8,6 +8,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { AuthGuard } from '././guardias/auth.guard';
 import { PerfilComponent } from './components/personas/perfil/perfil.component';
 import { AdministracionComponent } from './components/administracion/administracion.component';
+import { HeroeAgregarComponent } from './components/administracion/heroe/heroe-agregar/heroe-agregar.component';
 
 
 const rutas: Routes = [
@@ -17,6 +18,7 @@ const rutas: Routes = [
   { path: 'heroe/:id', component: HeroeComponent },
   { path: 'buscar/:termino', component: BuscadorComponent },
   { path: 'admin', component: AdministracionComponent},
+  { path: 'admin/heroe/registrar', component: HeroeAgregarComponent},
   { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard] },
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
