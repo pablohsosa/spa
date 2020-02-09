@@ -3,7 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { HeroesService } from '../../../../servicios/heroes.service';
 import { HeroeInterface } from '../../../../interfaces/heroe';
-
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-heroe-agregar',
@@ -38,16 +38,30 @@ export class HeroeAgregarComponent implements OnInit {
     event.preventDefault();
 
     if (this.form.valid) {
+
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Se registró exitosamente',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
       const value = this.form.value;
       this.heroesService.postHeroe(value)
         .subscribe(
           (datos) => {
-            this.mensajeOk = true;
-            this.mensaje = 'Se registró con éxito';
           },
           (err) => {
+
             this.mensajeError = true;
             this.mensaje = err;
+            Swal.fire({
+              icon: 'error',
+              title: 'Error al registrar',
+              text: err
+            }
+            );
           }
         );
       this.resetear();

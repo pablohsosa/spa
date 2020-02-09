@@ -1,10 +1,4 @@
 <h1>Agregar heroe</h1>
-<div *ngIf="mensajeOk"   class="alert alert-success" role="alert">
-  <strong>{{ mensaje }}</strong>
-</div>
-<div *ngIf="mensajeError"   class="alert alert-danger alert-dismissible fade show" role="alert">
-  <strong>{{ mensaje }}</strong>
-</div>
 <form [formGroup]="form" novalidate (ngSubmit)="registrar($event)">
   <input type="text" formControlName="nombre" placeholder="Nombre">
   <br>
@@ -18,5 +12,4 @@
   <br>
   <button type="submit" class="btn btn-primary" [disabled]="form.invalid" >Registrar</button>
   <a class="btn btn-secondary" role="button" routerLink="/admin" routerLinkActive="active">Cancelar</a>
-
 </form>

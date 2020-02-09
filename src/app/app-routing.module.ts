@@ -19,7 +19,8 @@ const rutas: Routes = [
   { path: 'buscar/:termino', component: BuscadorComponent },
   { path: 'admin', component: AdministracionComponent},
   { path: 'admin/heroe/registrar', component: HeroeAgregarComponent},
-  { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard] },
+  // { path: 'perfil', component: PerfilComponent, canActivate: [AuthGuard] },
+  { path: 'perfil', component: PerfilComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
